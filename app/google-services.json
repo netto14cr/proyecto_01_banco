@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "374457246936",
+    "project_id": "proyecto-banco-bb42e",
+    "storage_bucket": "proyecto-banco-bb42e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374457246936:android:31cb1a8a4c445e31dc23ad",
+        "android_client_info": {
+          "package_name": "com.example.proyecto_01_prestamos_bancarios"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374457246936-rklfvnmercs3q9lla5qliloov5dh1hd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk0D4xChSs3oHjzsv-I0nhILlBB-g3lRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374457246936-rklfvnmercs3q9lla5qliloov5dh1hd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

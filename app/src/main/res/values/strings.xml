@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Proyecto Prestamos Bancarios</string>
+    <string name="welcome_message" />
+    <string name="login_button_text">Iniciar sesion</string>
+    <string name="register_button_text">Registrarse</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="go_back">Go Back</string>
+    <string name="todo">TODO</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="tipo_usuario_prompt">Seleccione el tipo de usuario</string>
+    <string name="ingrese_su_tel_fono">Ingrese su teléfono</string>
+    <string name="ingrese_su_email">Ingrese su email</string>
+    <string name="tel_fono">Teléfono:</string>
+    <string name="ingrese_su_clave">Ingrese su clave</string>
+    <string name="clave">Clave:</string>
+    <string name="ingrese_su_nombre">Ingrese su nombre</string>
+    <string name="nombre">Nombre:</string>
+    <string name="ingrese_su_telefono" />
+    <string name="telefono" />
+    <string name="tipo_usuario" />
+    <string-array name="tipo_usuario_opciones">
+        <item>Cliente</item>
+        <item>Admin</item>
+    </string-array>
+</resources>
