@@ -20,6 +20,18 @@
     <string name="ingrese_su_telefono" />
     <string name="telefono" />
     <string name="tipo_usuario" />
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="mi_informacion_personal">Mi informacion personal</string>
+    <string name="calcular_cuota">Calcular Cuota</string>
+    <string name="gestionar_mis_ahorros">Gestionar mis ahorros</string>
+    <string name="gestionar_mis_pr_stamos">Gestionar mis préstamos</string>
+    <string name="bienvenido_a_cliente">Bienvenido(a) Cliente</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="contacto">Contacto</string>
+    <string name="ver_mis_pr_stamos">Ver mis préstamos</string>
+    <string name="calcula_tu_cuota">Calcula tu Cuota</string>
+    <string name="gestionar_mi_ahorro">Gestionar mi ahorro</string>
+    <string name="sobre_nosotros" />
     <string-array name="tipo_usuario_opciones">
         <item>Cliente</item>
         <item>Admin</item>

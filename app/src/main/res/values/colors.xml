@@ -10,4 +10,7 @@
     <color name="text_color">#FF000000</color>
     <color name="background_color">#ffffff</color>
     <color name="button_stroke_color">#A9A9A9</color>
+    <color name="colorPrimary">#05BC73</color>
+    <color name="dark_green">#011D2B</color>
+    <color name="dark_theme">#0F2F4D</color>
 </resources>

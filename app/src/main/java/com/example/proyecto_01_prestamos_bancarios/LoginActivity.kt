@@ -4,10 +4,17 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import java.util.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -46,15 +53,46 @@ class LoginActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(username, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        // Si el inicio de sesión fue exitoso, obtener el usuario actual y mostrar un mensaje de bienvenida
+                        // Si el inicio de sesión fue exitoso, obtener el usuario actual
                         val user = auth.currentUser
-                        val message = "Bienvenido, ${user?.email}!"
-                        showMessageDialog("¡Éxito!", message)
 
-                        // Ir a la actividad principal de la app
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                        finish() // Cerrar esta actividad para que no se pueda volver a ella con el botón "Atrás"
+                        // Obtener información adicional del usuario de la base de datos
+                        val userRef = FirebaseDatabase.getInstance().getReference("usuarios/${user?.uid}")
+                        userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                                val tipoUsuario = dataSnapshot.child("tipo_usuario").getValue(String::class.java)?.toLowerCase(
+                                    Locale.ROOT)
+                                // Redirigir al usuario a la actividad correspondiente basándose en su tipo de usuario
+                                if (tipoUsuario == "cliente") {
+                                    val userRef = FirebaseDatabase.getInstance().getReference("usuarios/${user?.uid}")
+                                    userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                                        override fun onDataChange(dataSnapshot: DataSnapshot) {
+                                            val nombreUsuario = dataSnapshot.child("nombre").getValue(String::class.java)
+                                            val mensajeBienvenida = "Bienvenido, $nombreUsuario!"
+                                            Toast.makeText(this@LoginActivity, mensajeBienvenida, Toast.LENGTH_LONG).show()
+
+                                            val intent = Intent(this@LoginActivity, ClienteActivity::class.java)
+                                            startActivity(intent)
+                                            finish()
+                                        }
+
+                                        override fun onCancelled(databaseError: DatabaseError) {
+                                            showMessageDialog("Error", "No se pudo obtener información de usuario.")
+                                        }
+                                    })
+                                } else if (tipoUsuario == "admin") {
+                                    val intent = Intent(this@LoginActivity, AdminActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                } else {
+                                    showMessageDialog("Error", "Tipo de usuario no válido.")
+                                }
+                            }
+
+                            override fun onCancelled(databaseError: DatabaseError) {
+                                showMessageDialog("Error", "No se pudo obtener información de usuario.")
+                            }
+                        })
                     } else {
                         // Si el inicio de sesión falló, mostrar un mensaje de error
                         showMessageDialog("Error", "Credenciales inválidas. Por favor, inténtelo nuevamente.")
@@ -71,10 +109,10 @@ class LoginActivity : AppCompatActivity() {
 
     // Función para mostrar un diálogo con un mensaje personalizado
     private fun showMessageDialog(title: String, message: String) {
-        val dialog = AlertDialog.Builder(this)
-        dialog.setTitle(title)
-        dialog.setMessage(message)
-        dialog.setPositiveButton("OK", null)
-        dialog.show()
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("OK", null)
+        builder.show()
     }
 }

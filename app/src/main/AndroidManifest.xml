@@ -12,6 +12,15 @@
         android:theme="@style/Theme.Proyecto_01_prestamos_bancarios"
         tools:targetApi="31">
         <activity
+            android:name=".ClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClientActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
