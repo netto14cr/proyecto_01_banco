@@ -29,18 +29,21 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_arrow_forward"
-                        android:contentDescription="TODO" />
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="8dp"
+                        android:src="@mipmap/ic_option_pc" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:padding="16dp"
                         android:text="@string/ver_mis_pr_stamos"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/holo_blue_dark" />
+                        android:textSize="16sp"
+                        android:textColor="@color/dark_green" />
 
                 </LinearLayout>
 
@@ -58,23 +61,24 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    tools:ignore="UseCompoundDrawables">
+                    android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_arrow_forward"
-                        android:contentDescription="TODO" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:src="@mipmap/ic_option_pc" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/gestionar_mi_ahorro"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/holo_blue_dark" />
-
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:text="@string/gestionar_mi_ahorro"
+                    android:textSize="16sp"
+                    android:textColor="@color/dark_green" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -91,22 +95,24 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    tools:ignore="UseCompoundDrawables">
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_arrow_forward"
-                        android:contentDescription="TODO" />
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="8dp"
+                        android:src="@mipmap/ic_option_pc" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:padding="16dp"
                         android:text="@string/calcular_cuota"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/holo_blue_dark" />
+                        android:textSize="16sp"
+                        android:textColor="@color/dark_green" />
 
                 </LinearLayout>
 
@@ -124,22 +130,24 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    tools:ignore="UseCompoundDrawables">
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_btn_cerrar"
-                        android:contentDescription="TODO" />
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="8dp"
+                        android:src="@mipmap/ic_btn_cerrar" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:padding="16dp"
                         android:text="@string/cerrar_sesion"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/holo_blue_dark" />
+                        android:textSize="16sp"
+                        android:textColor="@color/dark_green" />
 
                 </LinearLayout>
 

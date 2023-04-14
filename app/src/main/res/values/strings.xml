@@ -31,7 +31,12 @@
     <string name="ver_mis_pr_stamos">Ver mis préstamos</string>
     <string name="calcula_tu_cuota">Calcula tu Cuota</string>
     <string name="gestionar_mi_ahorro">Gestionar mi ahorro</string>
-    <string name="sobre_nosotros" />
+    <string name="asignar_un_pr_stamo">Asignar un Préstamo</string>
+    <string name="agregar_un_cliente_nuevo">Agregar un cliente nuevo</string>
+    <string name="bienvenido_administrador">Bienvenido Administrador</string>
+    <string name="option">Option</string>
+    <string name="asignar_un_pr_stamo_a_un_cliente_existente">Asignar un préstamo a un cliente existente</string>
+    <string name="mensaje_administrador">Vista de administración</string>
     <string-array name="tipo_usuario_opciones">
         <item>Cliente</item>
         <item>Admin</item>

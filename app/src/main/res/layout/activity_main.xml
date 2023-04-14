@@ -10,7 +10,7 @@
     android:id="@+id/logoImageView"
     android:layout_width="250dp"
     android:layout_height="250dp"
-    android:src="@mipmap/logo_foreground"
+    android:src="@mipmap/ic_logo_foreground"
     android:layout_centerHorizontal="true"
     android:layout_marginTop="100dp" />
 

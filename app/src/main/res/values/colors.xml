@@ -12,5 +12,6 @@
     <color name="button_stroke_color">#A9A9A9</color>
     <color name="colorPrimary">#05BC73</color>
     <color name="dark_green">#011D2B</color>
+    <color name="card_text_view">#DDBE91</color>
     <color name="dark_theme">#0F2F4D</color>
 </resources>
