@@ -20,7 +20,6 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var nombreEditText: EditText
     private lateinit var claveEditText: EditText
     private lateinit var emailEditText: EditText
-    private lateinit var telefonoEditText: EditText
     private lateinit var registerButton: Button
 
     private lateinit var auth: FirebaseAuth
@@ -33,7 +32,6 @@ class RegisterActivity : AppCompatActivity() {
         nombreEditText = findViewById(R.id.nombre_edit_text)
         claveEditText = findViewById(R.id.clave_edit_text)
         emailEditText = findViewById(R.id.email_edit_text)
-        telefonoEditText = findViewById(R.id.telefono_edit_text)
         val tipoUsuarioSpinner = findViewById<Spinner>(R.id.tipo_usuario_spinner)
 
         // Crea un ArrayAdapter usando el array de opciones y un layout de spinner por defecto
@@ -61,11 +59,10 @@ class RegisterActivity : AppCompatActivity() {
             val nombre = nombreEditText.text.toString()
             val clave = claveEditText.text.toString()
             val email = emailEditText.text.toString()
-            val telefono = telefonoEditText.text.toString()
             val tipoUsuario = tipoUsuarioSpinner.selectedItem.toString()
 
             // Validar que los campos no estén vacíos
-            if (nombre.isBlank() || clave.isBlank() || email.isBlank() || telefono.isBlank()) {
+            if (nombre.isBlank() || clave.isBlank() || email.isBlank()) {
                 Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -83,8 +80,7 @@ class RegisterActivity : AppCompatActivity() {
                             "nombre" to nombre,
                             "tipo_usuario" to tipoUsuario,
                             "datos_adicionales" to hashMapOf(
-                                "email" to email,
-                                "telefono" to telefono
+                                "email" to email
                             )
                         )
 

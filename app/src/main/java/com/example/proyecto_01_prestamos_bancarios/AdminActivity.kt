@@ -14,22 +14,21 @@ class AdminActivity : AppCompatActivity() {
 
         // Este es la opcion en pantalla de administrador para agregar un nuevo cliente
         findViewById<View>(R.id.card_view_agregar_cliente).setOnClickListener {
-            // Agregar aquí la lógica para agregar un nuevo cliente
-            Toast.makeText(
-                this@AdminActivity,
-                "Agregar nuevo cliente",
-                Toast.LENGTH_SHORT
-            ).show()
+            // Abrir la actividad para agregar un nuevo cliente
+            val intent = Intent(this@AdminActivity, AgregarClienteActivity::class.java)
+            startActivity(intent)
+            // Mostrar un mensaje al usuario de que se abrió la actividad para agregar un nuevo cliente
+            Toast.makeText(this@AdminActivity, "Agregar nuevo cliente", Toast.LENGTH_SHORT).show()
         }
         // Este es la opcion en pantalla de administrador para asignar un préstamo a un cliente
         findViewById<View>(R.id.card_view_asignar_prestamo).setOnClickListener {
             // Agregar aquí la lógica para asignar un préstamo a un cliente existente
-            Toast.makeText(
-                this@AdminActivity,
-                "Asignar préstamo a cliente",
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent = Intent(this@AdminActivity, AsignarPrestamoActivity::class.java)
+            startActivity(intent)
+            // Mostrar un mensaje al usuario de que se abrió la actividad para agregar un nuevo cliente
+            Toast.makeText(this@AdminActivity, "Asignar préstamo a cliente", Toast.LENGTH_SHORT).show()
         }
+
         // Este es la opcion en pantalla de administrador para cerrar sesión
         findViewById<View>(R.id.card_view_cerrar_sesion_admin).setOnClickListener {
             // Borrar los datos de sesión guardados

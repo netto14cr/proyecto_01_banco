@@ -37,8 +37,18 @@
     <string name="option">Option</string>
     <string name="asignar_un_pr_stamo_a_un_cliente_existente">Asignar un préstamo a un cliente existente</string>
     <string name="mensaje_administrador">Vista de administración</string>
+    <string name="asignar_prestamos_a_clientes">Asignar prestamos a clientes</string>
+    <string name="monto_prestamo">Monto prestamo</string>
+    <string name="asignar">Asignar</string>
+    <string name="salario">Salario</string>
+    <string name="agregar_cliente">Agregar nuevo cliente</string>
+    <string name="cedula">Cedula</string>
+    <string name="nombre_completo">Nombre completo</string>
+    <string name="c_dula">Cedula</string>
+    <string name="vista_cliente">Vista cliente</string>
+    <string name="registro_de_usuarios">Registro de usuarios</string>
     <string-array name="tipo_usuario_opciones">
-        <item>Cliente</item>
+        <item>Developer</item>
         <item>Admin</item>
     </string-array>
 </resources>

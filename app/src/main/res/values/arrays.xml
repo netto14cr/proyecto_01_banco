@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="tipos_prestamos">
+        <item>Hipotecario</item>
+        <item>Educación</item>
+        <item>Personal</item>
+        <item>Viajes</item>
+    </array>
+    <string-array name="plazos">
+        <item>6 meses</item>
+        <item>12 meses</item>
+        <item>18 meses</item>
+        <item>24 meses</item>
+    </string-array>
+</resources>

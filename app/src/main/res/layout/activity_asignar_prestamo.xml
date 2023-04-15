@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/asignar_prestamos_a_clientes"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green" />
+
+        <Spinner
+            android:id="@+id/spCedulas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:dropDownVerticalOffset="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre"
+            android:inputType="textPersonName"
+            android:focusable="false"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/etSalario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/salario"
+            android:inputType="numberDecimal"
+            android:focusable="false"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/spTipoPrestamo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tipos_prestamos"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/etMontoPrestamo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/monto_prestamo"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/spPlazo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/plazos"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnAsignar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/asignar"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tvMontoCuota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
