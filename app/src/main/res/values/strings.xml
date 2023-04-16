@@ -48,6 +48,7 @@
     <string name="vista_cliente">Vista cliente</string>
     <string name="registro_de_usuarios">Registro de usuarios</string>
     <string name="ver_info_personal"> Información personal  </string>
+    <string name="btnModificarInfoP">Modificar</string>
     <string-array name="tipo_usuario_opciones">
         <item>Developer</item>
         <item>Admin</item>
