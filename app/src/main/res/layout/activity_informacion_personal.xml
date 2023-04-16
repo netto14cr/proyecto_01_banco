@@ -75,7 +75,8 @@
         <RadioButton
             android:id="@+id/radioButtonSoltInfoP"
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="25dp"
+            android:text="Soltero"/>
 
         <RadioButton
             android:id="@+id/radioButtonDivorciInfoP"
