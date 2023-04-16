@@ -1,32 +1,20 @@
 package com.example.proyecto_01_prestamos_bancarios
 
-import kotlin.math.pow
+import java.util.*
 
-class Prestamo(
-    val tipoPrestamo: String,
-    val montoPrestamo: Double,
-    val interes: Double,
-    val plazo: Int,
-    var montoCuota: Double
+
+// Define la clase Prestamo
+data class Prestamo(
+    val tipo: String,
+    val monto: Double,
+    val plazo: String,
+    val tasaInteres: Double,
+    val montoCuota: Double,
+    val fechaCreacion: Date,
+    val fechaFinalizacion: Date
 ) {
-    var pagosRealizados: Int = 0
-
-    fun montoPendiente(): Double {
-        val tasaMensual = interes / 12.0
-        val nPagosRestantes = plazo - pagosRealizados
-        val montoPendiente =
-            montoPrestamo * (1 + tasaMensual).pow(nPagosRestantes) - montoCuota * ((1 + tasaMensual).pow(nPagosRestantes) - 1) / tasaMensual
-        return montoPendiente
-    }
-
-    fun realizarPago() {
-        pagosRealizados++
-        montoCuota = calcularMontoCuota()
-    }
-
-    private fun calcularMontoCuota(): Double {
-        val tasaMensual = interes / 12.0
-        return montoPrestamo * tasaMensual / (1 - (1 + tasaMensual).pow(-plazo))
+    // Define el método toString
+    override fun toString(): String {
+        return "Prestamo(tipo='$tipo', monto=$monto, plazo='$plazo', tasaInteres=$tasaInteres, montoCuota=$montoCuota, fechaCreacion=$fechaCreacion, fechaFinalizacion=$fechaFinalizacion)"
     }
 }
-

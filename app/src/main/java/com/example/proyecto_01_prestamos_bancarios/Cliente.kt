@@ -1,27 +1,18 @@
 package com.example.proyecto_01_prestamos_bancarios
 
-class Cliente {
-    var cedula: String = ""
-    var nombre: String = ""
-    var salario: String = ""
-    var prestamos: MutableList<Prestamo> = mutableListOf()
-
-    fun agregarPrestamo(prestamo: Prestamo) {
-        prestamos.add(prestamo)
-    }
-
-    fun eliminarPrestamo(prestamo: Prestamo) {
-        prestamos.remove(prestamo)
-    }
-
-    fun calcularDeudaTotal(): Double {
-        var deudaTotal = 0.0
-        for (prestamo in prestamos) {
-            deudaTotal += prestamo.montoPendiente()
-        }
-        return deudaTotal
-    }
+data class Cliente(
+    var id: String? = null,
+    var nombre: String? = null,
+    var apellido: String? = null,
+    var email: String? = null,
+    var salario: String? = null,
+    var telefono: String? = null,
+    var direccion: String? = null
+) {
+    constructor() : this(null, null, null, null,null, null, null)
 }
+
+
 
 
 
