@@ -37,6 +37,20 @@ class ClienteActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
+
+        // Este es la opcion en pantalla de cliente para ver y modificar la información personal
+        findViewById<View>(R.id.card_view_info_personal).setOnClickListener {
+            Toast.makeText(
+                this@ClienteActivity,
+                "Información personal",
+                Toast.LENGTH_SHORT
+            ).show()
+            // Redirigir al usuario a la pantalla de inicio de sesión
+            val intent = Intent(this@ClienteActivity, InformacionPersonal::class.java)
+            startActivity(intent)
+        }
+
+
         // Este es la opcion en pantalla de cliente para cerrar sesion
         findViewById<View>(R.id.card_view_cerrar_sesion).setOnClickListener {
             // Borrar los datos de sesión guardados
