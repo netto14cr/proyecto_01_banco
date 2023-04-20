@@ -29,11 +29,8 @@ class ClienteActivity : AppCompatActivity() {
         }
         // Este es la opcion en pantalla de cliente para calcular la cuota
         findViewById<View>(R.id.card_view_cuota).setOnClickListener {
-            Toast.makeText(
-                this@ClienteActivity,
-                "Calcular cuota",
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent = Intent(this@ClienteActivity, CalcularCuota::class.java)
+            startActivity(intent)
         }
 
         // Este es la opcion en pantalla de cliente para ver y modificar la información personal

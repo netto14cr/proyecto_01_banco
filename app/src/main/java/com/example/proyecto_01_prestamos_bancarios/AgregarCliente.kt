@@ -91,10 +91,10 @@ class AgregarClienteActivity : AppCompatActivity() {
                             "direccion" to direccion,
                             "estado_civil" to estadoCivil,
                             "ahorros" to hashMapOf(
-                                "Navidad" to 0,
-                                "Escolar" to 0,
-                                "Marchamo" to 0,
-                                "Extraordinario" to 0
+                                "Navidad" to "0",
+                                "Escolar" to "0",
+                                "Marchamo" to "0",
+                                "Extraordinario" to "0"
                             )
                         )
 

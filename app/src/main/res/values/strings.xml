@@ -53,4 +53,18 @@
         <item>Developer</item>
         <item>Admin</item>
     </string-array>
+    <string-array name="tipoCreditoOptions">
+        <item>Hipotecario</item>
+        <item>Educación</item>
+        <item>Personal</item>
+        <item>Viajes</item>
+    </string-array>
+
+    <string-array name="plazoOptions">
+        <item>12 meses</item>
+        <item>24 meses</item>
+        <item>36 meses</item>
+        <item>48 meses</item>
+    </string-array>
+
 </resources>
