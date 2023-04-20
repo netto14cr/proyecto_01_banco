@@ -37,7 +37,7 @@
     <string name="option">Option</string>
     <string name="asignar_un_pr_stamo_a_un_cliente_existente">Asignar un préstamo a un cliente existente</string>
     <string name="mensaje_administrador">Vista de administración</string>
-    <string name="asignar_prestamos_a_clientes">Asignar prestamos a clientes</string>
+    <string name="asignar_prestamos_a_clientes">Asignar prestamo a cliente</string>
     <string name="monto_prestamo">Monto prestamo</string>
     <string name="asignar">Asignar</string>
     <string name="salario">Salario</string>
@@ -49,6 +49,12 @@
     <string name="registro_de_usuarios">Registro de usuarios</string>
     <string name="ver_info_personal"> Información personal  </string>
     <string name="btnModificarInfoP">Modificar</string>
+    <string name="selecciona_un_tipo_de_prestamo">Selecciona el tipo de prestamo</string>
+    <string name="selecciona_un_cliente">Selecciona un cliente</string>
+    <string name="selecciona_el_plazo_del_prestamo">Selecciona el plazo del prestamo</string>
+    <string name="monto_de_cuota">Monto de cuota</string>
+    <string name="fecha_finalizacion">Fecha finalizacion</string>
+    <string name="fecha_finalizaci_n">Fecha finalización:</string>
     <string-array name="tipo_usuario_opciones">
         <item>Developer</item>
         <item>Admin</item>

@@ -19,16 +19,21 @@
             android:textStyle="bold"
             android:textColor="@color/dark_green" />
 
+        <TextView
+            android:id="@+id/txtSeleccionaCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/selecciona_un_cliente"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/dark_green" />
+
         <Spinner
             android:id="@+id/spCedulas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:dropDownVerticalOffset="50dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
-
-
+            android:layout_marginTop="16dp" />
 
         <EditText
             android:id="@+id/etNombre"
@@ -48,6 +53,16 @@
             android:focusable="false"
             android:layout_marginTop="16dp" />
 
+        <TextView
+            android:id="@+id/txtSeleccionaTipoPrestamo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/selecciona_un_tipo_de_prestamo"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/dark_green" />
+
         <Spinner
             android:id="@+id/spTipoPrestamo"
             android:layout_width="match_parent"
@@ -63,6 +78,43 @@
             android:inputType="numberDecimal"
             android:layout_marginTop="16dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvFechaFinalizacionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fecha_finalizaci_n"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@color/dark_green" />
+
+            <TextView
+                android:id="@+id/tvFechaFinalizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textColor="@color/dark_green" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textSeleccionPlazo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/selecciona_el_plazo_del_prestamo"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/dark_green" />
+
         <Spinner
             android:id="@+id/spPlazo"
             android:layout_width="match_parent"
@@ -70,20 +122,31 @@
             android:entries="@array/plazos"
             android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/btnAsignar"
+        <TextView
+            android:id="@+id/textMontoCuota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/asignar"
-            android:layout_marginTop="16dp" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/monto_de_cuota"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/dark_green" />
 
         <TextView
             android:id="@+id/tvMontoCuota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="12dp"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/dark_green" />
+
+        <Button
+            android:id="@+id/btnAsignar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/asignar"
             android:layout_marginTop="16dp" />
 
     </LinearLayout>
