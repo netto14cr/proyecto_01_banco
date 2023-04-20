@@ -82,6 +82,10 @@ class LoginActivity : AppCompatActivity() {
                                     val intent = Intent(this@LoginActivity, AdminActivity::class.java)
                                     startActivity(intent)
                                     finish()
+                                } else if (tipoUsuario == "developer") {
+                                    val intent = Intent(this@LoginActivity, DevActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
                                 } else {
                                     showMessageDialog("Error", "Tipo de usuario no válido.")
                                 }

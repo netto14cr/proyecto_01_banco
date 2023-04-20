@@ -2,7 +2,6 @@ package com.example.proyecto_01_prestamos_bancarios
 
 import java.util.*
 
-
 // Define la clase Prestamo
 data class Prestamo(
     val tipo: String,

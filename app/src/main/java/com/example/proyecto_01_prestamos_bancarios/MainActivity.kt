@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
 
         // Asignar los botones de la interfaz a variables de Kotlin
         val buttonLogin = findViewById<Button>(R.id.loginButton)
-        val buttonRegister = findViewById<Button>(R.id.registerButton)
 
         // Asignar un listener al botón "Iniciar sesión"
         buttonLogin.setOnClickListener {
@@ -24,11 +23,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Asignar un listener al botón "Registrarse"
-        buttonRegister.setOnClickListener {
-            // Abrir la actividad correspondiente a la pantalla de registro
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-        }
     }
 }
