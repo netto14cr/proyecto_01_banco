@@ -23,20 +23,24 @@ class ClienteActivity : AppCompatActivity() {
         }
         // Este es la opcion en pantalla de cliente para gestionar sus ahorros
         findViewById<View>(R.id.card_view_ahorros).setOnClickListener {
-            Toast.makeText(
-                this@ClienteActivity,
-                "Gestionar mis ahorros",
-                Toast.LENGTH_SHORT
-            ).show()
+            // Redirigir al usuario a la pantalla de inicio de sesión
+            val intent = Intent(this@ClienteActivity, GestionMisAhorros::class.java)
+            startActivity(intent)
         }
         // Este es la opcion en pantalla de cliente para calcular la cuota
         findViewById<View>(R.id.card_view_cuota).setOnClickListener {
-            Toast.makeText(
-                this@ClienteActivity,
-                "Calcular cuota",
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent = Intent(this@ClienteActivity, CalcularCuota::class.java)
+            startActivity(intent)
         }
+
+        // Este es la opcion en pantalla de cliente para ver y modificar la información personal
+        findViewById<View>(R.id.card_view_info_personal).setOnClickListener {
+            // Redirigir al usuario a la pantalla de inicio de sesión
+            val intent = Intent(this@ClienteActivity, InformacionPersonal::class.java)
+            startActivity(intent)
+        }
+
+
         // Este es la opcion en pantalla de cliente para cerrar sesion
         findViewById<View>(R.id.card_view_cerrar_sesion).setOnClickListener {
             // Borrar los datos de sesión guardados

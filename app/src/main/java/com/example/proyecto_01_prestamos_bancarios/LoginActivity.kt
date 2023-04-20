@@ -1,9 +1,12 @@
 package com.example.proyecto_01_prestamos_bancarios
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -68,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
                                             val nombreUsuario = dataSnapshot.child("nombre").getValue(String::class.java)
                                             val mensajeBienvenida = "Bienvenido, $nombreUsuario!"
                                             Toast.makeText(this@LoginActivity, mensajeBienvenida, Toast.LENGTH_LONG).show()
-
+                                            guardarIdentificadorUsuario(dataSnapshot)
                                             val intent = Intent(this@LoginActivity, ClienteActivity::class.java)
                                             startActivity(intent)
                                             finish()
@@ -103,6 +106,20 @@ class LoginActivity : AppCompatActivity() {
             // Ir a la actividad anterior (en este caso, la actividad Main)
             finish() // Cerrar esta actividad para que no se pueda volver a ella con el botón "Atrás"
         }
+    }
+
+
+    //Con este identificador se puede consultar
+    //el usuario en la base de datos con su hash
+    private fun guardarIdentificadorUsuario(data: DataSnapshot) {
+        // Obtener referencia a SharedPreferences
+        val prefs = getSharedPreferences("infoUsuario", Context.MODE_PRIVATE)
+
+// Guardar un valor en SharedPreferences
+        val editor = prefs.edit()
+        var hash=data.key
+        editor.putString("hasUsuario", hash)
+        editor.apply()
     }
 
     // Función para mostrar un diálogo con un mensaje personalizado
