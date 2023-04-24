@@ -6,42 +6,81 @@ import java.util.*
 class Prestamo2 : Serializable {
     var id: String = ""
     var nombre: String = ""
-    var tipo: String = ""
-    var monto: Double = 0.0
-    var plazo: String = ""
+    var tipoPrestamo: String = ""
+    var montoPrestamo: Double = 0.0
+    var montoSolicitado: Double = 0.0
+    var plazoTexto: String = ""
     var tasaInteres: Double = 0.0
     var montoCuota: Double = 0.0
-    var fechaCreacion: Date? = null
+    var fechaInicio: Date? = null
     var fechaFinalizacion: Date? = null
     var saldo: Double = 0.0
-    var estado: String = ""
+    var prestamoActivo: Boolean = true
+    var cuotasTotales: Int = 0
+    var cuotasCanceladas: Int = 0
+
 
     constructor()
 
-    constructor(id: String, tipo: String, monto: Double, plazo: String, tasaInteres: Double, montoCuota: Double, fechaCreacion: Date?, fechaFinalizacion: Date?, saldo: Double, estado: String) {
+    constructor(
+        id: String,
+        tipoPrestamo: String,
+        montoPrestamo: Double,
+        montoSolicitado: Double,
+        plazoTexto: String,
+        tasaInteres: Double,
+        montoCuota: Double,
+        fechaInicio: Date?,
+        fechaFinalizacion: Date?,
+        saldo: Double,
+        prestamoActivo: Boolean,
+        cuotasTotales: Int,
+        cuotasCanceladas: Int
+    ) {
         this.id = id
-        this.tipo = tipo
-        this.monto = monto
-        this.plazo = plazo
+        this.tipoPrestamo = tipoPrestamo
+        this.montoPrestamo = montoPrestamo
+        this.montoSolicitado = montoSolicitado
+        this.plazoTexto = plazoTexto
         this.tasaInteres = tasaInteres
         this.montoCuota = montoCuota
-        this.fechaCreacion = fechaCreacion
+        this.fechaInicio = fechaInicio
         this.fechaFinalizacion = fechaFinalizacion
         this.saldo = saldo
-        this.estado = estado
+        this.prestamoActivo = prestamoActivo
+        this.cuotasTotales = cuotasTotales
+        this.cuotasCanceladas = cuotasCanceladas
     }
 
-    constructor(id: String, nombre: String, tipo: String, monto: Double, plazo: String, tasaInteres: Double, montoCuota: Double, fechaCreacion: Date?, fechaFinalizacion: Date?, saldo: Double, estado: String) {
+    constructor(
+        id: String,
+        nombre: String,
+        tipoPrestamo: String,
+        montoPrestamo: Double,
+        montoSolicitado: Double,
+        plazoTexto: String,
+        tasaInteres: Double,
+        montoCuota: Double,
+        fechaInicio: Date?,
+        fechaFinalizacion: Date?,
+        saldo: Double,
+        prestamoActivo: Boolean,
+        cuotasTotales: Int,
+        cuotasCanceladas: Int
+    ) {
         this.id = id
         this.nombre = nombre
-        this.tipo = tipo
-        this.monto = monto
-        this.plazo = plazo
+        this.tipoPrestamo = tipoPrestamo
+        this.montoPrestamo = montoPrestamo
+        this.montoSolicitado = montoSolicitado
+        this.plazoTexto = plazoTexto
         this.tasaInteres = tasaInteres
         this.montoCuota = montoCuota
-        this.fechaCreacion = fechaCreacion
+        this.fechaInicio = fechaInicio
         this.fechaFinalizacion = fechaFinalizacion
         this.saldo = saldo
-        this.estado = estado
+        this.prestamoActivo = prestamoActivo
+        this.cuotasTotales = cuotasTotales
+        this.cuotasCanceladas = cuotasCanceladas
     }
 }

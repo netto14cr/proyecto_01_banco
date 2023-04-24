@@ -75,6 +75,11 @@
     <string name="tasa_interes">tasa de interes</string>
     <string name="fecha_inicio">fecha inicio</string>
     <string name="id_prestamo">Id prestamo</string>
+    <string name="monto_prestamo_solicitado">Monto prestamo solicitado</string>
+    <string name="selecciona_la_cantidad_de_cuotas_a_cancelar">Selecciona la cantidad de cuotas a cancelar:</string>
+    <string name="saldo_prestamo">Saldo prestamo</string>
+    <string name="monto_total_a_pagar">Monto total a pagar:</string>
+    <string name="cantidad_de_cuotas">Cantidad de cuotas:</string>
     <string-array name="tipo_usuario_opciones">
         <item>Developer</item>
         <item>Admin</item>

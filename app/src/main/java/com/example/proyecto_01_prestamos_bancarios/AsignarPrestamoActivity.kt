@@ -168,26 +168,25 @@ class AsignarPrestamoActivity : AppCompatActivity() {
 
     // Calcula el monto de la cuota mensual del préstamo
     private fun calcularMontoCuota() {
-        val tipoPrestamo = spTipoPrestamo.selectedItemPosition
         val montoPrestamoStr = etMontoPrestamo.text.toString()
-
         if (isNumeric(montoPrestamoStr)) {
             val montoPrestamo = montoPrestamoStr.toDouble()
-            val plazo = (spPlazo.selectedItemPosition + 1)*6
+            val plazo = obtenerPlazoEnMeses()
             val tasaInteres = calcularTasaInteres(spTipoPrestamo.selectedItemPosition)
             val interesMensual = tasaInteres / 12
-            val montoCuota = montoPrestamo * interesMensual / (1 - (1 + interesMensual).pow(-plazo))
+            val denominador = 1 - (1 + interesMensual).pow(-plazo)
+            val montoCuota = montoPrestamo * interesMensual / denominador
 
             val clienteSalarioStr = cliente.salario
             if (isNumeric(clienteSalarioStr)) {
                 val clienteSalario = clienteSalarioStr?.toDouble() ?: 0.0
-                val maximoPermitido = clienteSalario * 0.3
-                if (montoCuota > clienteSalario * 0.45) {
-                    val mensaje = "El monto de la cuota no puede ser mayor al 45% del salario del cliente"
+                val maximoPermitido = clienteSalario * 0.45
+                if (montoPrestamo > maximoPermitido) {
+                    val mensaje = "El monto del préstamo no puede ser mayor al 45% del salario del cliente"
                     Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
                     btnAsignar.isEnabled = false
-                } else if (montoCuota > maximoPermitido) {
-                    val mensaje = "El monto de la cuota no puede ser mayor a $maximoPermitido"
+                } else if (montoCuota > clienteSalario * 0.3) {
+                    val mensaje = "El monto de la cuota no puede ser mayor al 30% del salario del cliente"
                     Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
                     btnAsignar.isEnabled = false
                 } else {
@@ -214,7 +213,7 @@ class AsignarPrestamoActivity : AppCompatActivity() {
             1 -> 0.08 // Educación
             2 -> 0.1 // Personal
             3 -> 0.12 // Viajes
-            else -> 0.1 // Default (Hipotecario)
+            else -> throw IllegalArgumentException("Tipo de préstamo desconocido: $tipoPrestamo")
         }
     }
 
@@ -231,6 +230,14 @@ class AsignarPrestamoActivity : AppCompatActivity() {
         return calendar.time
     }
 
+    private fun obtenerPlazoEnMeses(): Int {
+        return when (spPlazo.selectedItemPosition) {
+            0 -> 36
+            1 -> 60
+            2 -> 120
+            else -> 0
+        }
+    }
 
     // Asigna el préstamo al cliente
     private fun asignarPrestamo() {
@@ -243,18 +250,33 @@ class AsignarPrestamoActivity : AppCompatActivity() {
         // Crea el objeto préstamo con los datos ingresados
         val tipoPrestamo = spTipoPrestamo.selectedItem.toString()
         val montoPrestamo = etMontoPrestamo.text.toString().toDoubleOrNull() ?: return
-        val plazo = (spPlazo.selectedItemPosition + 1)*6
+        val plazo = obtenerPlazoEnMeses()
         val plazoTexto = spPlazo.selectedItem.toString()
         val tasaInteres = calcularTasaInteres(spTipoPrestamo.selectedItemPosition)
         val interesMensual = tasaInteres / 12
         val montoCuota = montoPrestamo * interesMensual / (1 - (1 + interesMensual).pow(-plazo))
+        val montoSolicitado = montoPrestamo
+        val montoPrestamo2 = (montoCuota * plazo)
 
         // Calcula las fechas de creación y finalización del préstamo
         val fechaInicio = Date()
         val fechaFinalizacion = calcularFechaFinalizacion(fechaInicio, plazo)
 
         // Crea un objeto Prestamo con los datos ingresados y las fechas calculadas
-        val prestamo = Prestamo(tipoPrestamo, montoPrestamo, plazoTexto, tasaInteres, montoCuota, fechaInicio, fechaFinalizacion)
+        val prestamo = Prestamo(
+            tipoPrestamo = tipoPrestamo,
+            montoPrestamo = String.format("%.2f", montoPrestamo2).toDouble(),
+            montoSolicitado = montoSolicitado,
+            saldo = String.format("%.2f", montoPrestamo2).toDouble(),
+            plazoTexto = plazoTexto,
+            tasaInteres = tasaInteres,
+            montoCuota = String.format("%.2f", montoCuota).toDouble(),
+            fechaInicio = fechaInicio,
+            fechaFinalizacion = fechaFinalizacion,
+            prestamoActivo = true,
+            cuotasTotales = plazo,
+            cuotasCanceladas = 0
+        )
 
         // Obtiene el ID del cliente seleccionado
         val clienteId = cliente.id
@@ -281,6 +303,7 @@ class AsignarPrestamoActivity : AppCompatActivity() {
             Log.e(TAG, "Error al asignar préstamo", e)
         }
     }
+
 
 }
 

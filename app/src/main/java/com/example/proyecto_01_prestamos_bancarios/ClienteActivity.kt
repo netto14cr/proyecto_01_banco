@@ -18,8 +18,6 @@ class ClienteActivity : AppCompatActivity() {
             // Abrir la actividad para ver los préstamos del cliente
             val intent = Intent(this@ClienteActivity, PrestamosActivity::class.java)
             startActivity(intent)
-            // Mostrar un mensaje al usuario de que se abrió la actividad para ver los préstamos
-            Toast.makeText(this@ClienteActivity, "Ver mis préstamos", Toast.LENGTH_SHORT).show()
         }
         // Este es la opcion en pantalla de cliente para gestionar sus ahorros
         findViewById<View>(R.id.card_view_ahorros).setOnClickListener {

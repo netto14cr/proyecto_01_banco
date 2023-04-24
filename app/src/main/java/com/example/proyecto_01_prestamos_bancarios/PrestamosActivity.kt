@@ -2,6 +2,7 @@ package com.example.proyecto_01_prestamos_bancarios
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,25 +40,40 @@ class PrestamosActivity : AppCompatActivity() {
             prestamosRef.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
-                        val prestamosList = mutableListOf<Prestamo2>()
+                        val prestamosActivos = mutableListOf<Prestamo2>()
+                        val prestamosInactivos = mutableListOf<Prestamo2>()
                         for (prestamoSnapshot in snapshot.children) {
                             val prestamo = prestamoSnapshot.getValue(Prestamo2::class.java)
                             prestamo?.let {
                                 it.id = prestamoSnapshot.key ?: ""
-                                prestamosList.add(it)
+                                if (it.prestamoActivo) {
+                                    prestamosActivos.add(it)
+                                } else {
+                                    prestamosInactivos.add(it)
+                                }
                             }
                         }
-                        // Configuración del adaptador del RecyclerView
-                        val adapter = PrestamosAdapter(prestamosList)
-                        rvPrestamos.adapter = adapter
 
-                        // Configuración de onClickListener para mostrar detalles del préstamo
+                        val prestamosList = (prestamosActivos + prestamosInactivos).toMutableList()
+                        prestamosList.sortByDescending { it.fechaInicio }
+                        val adapter = PrestamosAdapter(prestamosList,userId)
+                        rvPrestamos.adapter = adapter
                         adapter.setOnItemClickListener(object : PrestamosAdapter.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int, prestamo: Prestamo2) {
                                 // Abrir actividad para mostrar detalles del préstamo
                                 // Enviar el objeto prestamo como argumento
                             }
                         })
+                    } else {
+                        val builder = AlertDialog.Builder(this@PrestamosActivity)
+                        builder.setTitle("Información")
+                        builder.setMessage("El cliente no tiene préstamos asociados.")
+                        builder.setNegativeButton("Volver") { dialog, _ ->
+                            dialog.dismiss()
+                            onBackPressed()
+                        }
+                        val dialog = builder.create()
+                        dialog.show()
                     }
                 }
 
@@ -67,4 +83,5 @@ class PrestamosActivity : AppCompatActivity() {
             })
         }
     }
+
 }
