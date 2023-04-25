@@ -27,6 +27,15 @@
             android:name=".InformacionPersonal"
             android:exported="false"
             android:parentActivityName=".ClienteActivity" />
+
+<activity
+            android:name=".PrestamosActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".DevActivity"
+            android:exported="false" />
+
         <activity
             android:name=".AsignarPrestamoActivity"
             android:exported="false" />

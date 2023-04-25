@@ -55,6 +55,33 @@
     <string name="monto_de_cuota">Monto de cuota</string>
     <string name="fecha_finalizacion">Fecha finalizacion</string>
     <string name="fecha_finalizaci_n">Fecha finalización:</string>
+    <string name="realizar_pago">Realizar pago</string>
+    <string name="formato_moneda">$ %1$.2f</string>
+    <string name="formato_cuotas">$ %1$.2f</string>
+    <string name="vista_developer">Vista Developer</string>
+    <string name="registro_de_administrador">Registro de Administrador</string>
+    <string name="tipo_de_pr_stamo">Tipo de préstamo:</string>
+    <string name="monto">Monto:</string>
+    <string name="plazo">Plazo:</string>
+    <string name="tasa_de_inter_s">Tasa de interés:</string>
+    <string name="fecha_de_creaci_n">Fecha de creación:</string>
+    <string name="fecha_de_finalizaci_n">Fecha de finalización:</string>
+    <string name="estado">Estado:</string>
+    <string name="saldo">Saldo:</string>
+    <string name="mis_pr_stamos">Mis préstamos</string>
+    <string name="plazo_meses">Plazo (meses)</string>
+    <string name="monto_del_pr_stamo">Monto del préstamo</string>
+    <string name="nombre_del_cliente">Nombre del cliente</string>
+    <string name="monto_cuota">Monto cuota</string>
+    <string name="tipo_prestamo">Tipo prestamo</string>
+    <string name="tasa_interes">tasa de interes</string>
+    <string name="fecha_inicio">fecha inicio</string>
+    <string name="id_prestamo">Id prestamo</string>
+    <string name="monto_prestamo_solicitado">Monto prestamo solicitado</string>
+    <string name="selecciona_la_cantidad_de_cuotas_a_cancelar">Selecciona la cantidad de cuotas a cancelar:</string>
+    <string name="saldo_prestamo">Saldo prestamo</string>
+    <string name="monto_total_a_pagar">Monto total a pagar:</string>
+    <string name="cantidad_de_cuotas">Cantidad de cuotas:</string>
     <string-array name="tipo_usuario_opciones">
         <item>Developer</item>
         <item>Admin</item>

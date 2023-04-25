@@ -7,9 +7,8 @@
         <item>Viajes</item>
     </array>
     <string-array name="plazos">
-        <item>6 meses</item>
-        <item>12 meses</item>
-        <item>18 meses</item>
-        <item>24 meses</item>
+        <item>36 meses</item>
+        <item>60 meses</item>
+        <item>120 meses</item>
     </string-array>
 </resources>

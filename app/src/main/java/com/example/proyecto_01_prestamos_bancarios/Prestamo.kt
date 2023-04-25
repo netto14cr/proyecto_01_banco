@@ -2,19 +2,21 @@ package com.example.proyecto_01_prestamos_bancarios
 
 import java.util.*
 
-
-// Define la clase Prestamo
 data class Prestamo(
-    val tipo: String,
-    val monto: Double,
-    val plazo: String,
+    val tipoPrestamo: String,
+    val montoPrestamo: Double,
+    val montoSolicitado: Double,
+    val saldo: Double,
+    val plazoTexto: String,
     val tasaInteres: Double,
     val montoCuota: Double,
-    val fechaCreacion: Date,
-    val fechaFinalizacion: Date
+    val fechaInicio: Date,
+    val fechaFinalizacion: Date,
+    val prestamoActivo: Boolean,
+    val cuotasTotales: Int,
+    val cuotasCanceladas: Int
 ) {
-    // Define el método toString
     override fun toString(): String {
-        return "Prestamo(tipo='$tipo', monto=$monto, plazo='$plazo', tasaInteres=$tasaInteres, montoCuota=$montoCuota, fechaCreacion=$fechaCreacion, fechaFinalizacion=$fechaFinalizacion)"
+        return "Prestamo(tipoPrestamo='$tipoPrestamo', montoPrestamo=$montoPrestamo,montoSolicitado=$montoSolicitado,saldo=$saldo, plazoTexto='$plazoTexto', tasaInteres=$tasaInteres, montoCuota=$montoCuota, fechaInicio=$fechaInicio, fechaFinalizacion=$fechaFinalizacion, prestamoActivo=$prestamoActivo, cuotasTotales=$cuotasTotales, cuotasCanceladas=$cuotasCanceladas)"
     }
 }
