@@ -44,7 +44,8 @@
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128" />
+        app:layout_constraintVertical_bias="0.128"
+        android:textColor="@color/dark_green" />
 
     <EditText
         android:id="@+id/editTextCuotaEscolar"
@@ -83,7 +84,8 @@
         app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476" />
+        app:layout_constraintVertical_bias="0.476"
+        android:textColor="@color/dark_green" />
 
     <EditText
         android:id="@+id/editTextCuotaMarchamo"
@@ -188,7 +190,8 @@
         app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.701" />
+        app:layout_constraintVertical_bias="0.701"
+        android:textColor="@color/dark_green" />
 
     <Button
         android:id="@+id/buttonEscolar"
@@ -214,7 +217,8 @@
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintVertical_bias="0.292"
+        android:textColor="@color/dark_green" />
 
     <Button
         android:id="@+id/buttonEliminarNavidad"

@@ -82,7 +82,7 @@
     <string name="saldo_prestamo">Saldo prestamo</string>
     <string name="monto_total_a_pagar">Monto total a pagar:</string>
     <string name="cantidad_de_cuotas">Cantidad de cuotas:</string>
-    <string name="tipo_de_usuaruario">Tipo de usuaruario</string>
+    <string name="tipo_de_usuaruario">Tipo de usuario</string>
     <string name="registrar_usuario">Registrar</string>
     <string name="cancelar">Cancelar</string>
     <string-array name="tipo_usuario_opciones">
