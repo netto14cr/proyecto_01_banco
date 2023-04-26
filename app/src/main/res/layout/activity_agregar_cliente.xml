@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:hint="@string/c_dula" />
+            android:hint="@string/c_dula"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/nombre_edit_text"
@@ -34,7 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:hint="@string/nombre_completo" />
+            android:hint="@string/nombre_completo"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/salario_edit_text"
@@ -42,7 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:hint="Salario" />
+            android:hint="Salario"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/telefono_edit_text"
@@ -50,7 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:hint="Teléfono" />
+            android:hint="Teléfono"
+            android:inputType="number" />
 
         <EditText
         android:id="@+id/fecha_edit_text"
@@ -68,6 +72,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:inputType="textEmailAddress"
             android:hint="@string/ingrese_su_email" />
 
         <EditText

@@ -14,4 +14,5 @@
     <color name="dark_green">#011D2B</color>
     <color name="card_text_view">#DDBE91</color>
     <color name="dark_theme">#0F2F4D</color>
+    <color name="red">#FF0000</color>
 </resources>

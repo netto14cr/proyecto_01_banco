@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Proyecto Prestamos Bancarios</string>
+    <string name="app_name">Banco AsoDesUnidos</string>
     <string name="welcome_message" />
     <string name="login_button_text">Iniciar sesion</string>
     <string name="register_button_text">Registrarse</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="log_in">Log In</string>
-    <string name="go_back">Go Back</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="log_in">Iniciar Sesión</string>
+    <string name="go_back">Volver atrás</string>
     <string name="todo">TODO</string>
     <string name="registrarse">Registrarse</string>
     <string name="tipo_usuario_prompt">Seleccione el tipo de usuario</string>
@@ -82,6 +82,9 @@
     <string name="saldo_prestamo">Saldo prestamo</string>
     <string name="monto_total_a_pagar">Monto total a pagar:</string>
     <string name="cantidad_de_cuotas">Cantidad de cuotas:</string>
+    <string name="tipo_de_usuaruario">Tipo de usuaruario</string>
+    <string name="registrar_usuario">Registrar</string>
+    <string name="cancelar">Cancelar</string>
     <string-array name="tipo_usuario_opciones">
         <item>Developer</item>
         <item>Admin</item>

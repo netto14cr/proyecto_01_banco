@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.util.Patterns
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -21,6 +22,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var claveEditText: EditText
     private lateinit var emailEditText: EditText
     private lateinit var registerButton: Button
+    private lateinit var btnCancel: Button
 
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
@@ -32,6 +34,7 @@ class RegisterActivity : AppCompatActivity() {
         nombreEditText = findViewById(R.id.nombre_edit_text)
         claveEditText = findViewById(R.id.clave_edit_text)
         emailEditText = findViewById(R.id.email_edit_text)
+        btnCancel = findViewById(R.id.boton_cancelar_2)
         val tipoUsuarioSpinner = findViewById<Spinner>(R.id.tipo_usuario_spinner)
 
         // Crea un ArrayAdapter usando el array de opciones y un layout de spinner por defecto
@@ -60,6 +63,36 @@ class RegisterActivity : AppCompatActivity() {
             val clave = claveEditText.text.toString()
             val email = emailEditText.text.toString()
             val tipoUsuario = tipoUsuarioSpinner.selectedItem.toString()
+            val emailPattern = Patterns.EMAIL_ADDRESS
+
+
+            if (nombre.isBlank() || nombre.length < 3 || nombre.length > 50) {
+                Toast.makeText(this, "Por favor, ingrese un nombre válido", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (clave.isBlank() || clave.length < 6 || clave.length > 20) {
+                Toast.makeText(this, "Por favor, ingrese una contraseña válida", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (email.isBlank() || email.length > 50) {
+                Toast.makeText(this, "Por favor, ingrese un correo electrónico válido", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Validar que el correo electrónico tenga un formato válido
+            if (!emailPattern.matcher(email).matches()) {
+                Toast.makeText(this, "Por favor ingrese una dirección de correo electrónico con formato válida.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+
+            val allowedChars = Regex("[A-Za-z0-9@#$%^&+=]+")
+            if (!allowedChars.matches(nombre) || !allowedChars.matches(clave)) {
+                Toast.makeText(this, "Por favor, ingrese caracteres válidos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // Validar que los campos no estén vacíos
             if (nombre.isBlank() || clave.isBlank() || email.isBlank()) {
@@ -123,6 +156,13 @@ class RegisterActivity : AppCompatActivity() {
                         ).show()
                     }
                 }
+        }
+
+        // Asignar un listener al botón "Cancelar"
+        btnCancel.setOnClickListener {
+            Toast.makeText(this, "Volver a menu principal", Toast.LENGTH_SHORT).show()
+            // Ir a la actividad anterior (en este caso, la actividad Main)
+            finish() // Cerrar esta actividad para que no se pueda volver a ella con el botón "Atrás"
         }
     }
 

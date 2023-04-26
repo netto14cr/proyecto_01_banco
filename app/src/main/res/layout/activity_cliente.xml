@@ -44,7 +44,7 @@
                         android:layout_height="48dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="8dp"
-                        android:src="@mipmap/ic_option_pc" />
+                        android:src="@mipmap/ic_prestamos" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -79,7 +79,7 @@
                     android:layout_height="48dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="8dp"
-                    android:src="@mipmap/ic_option_pc" />
+                    android:src="@mipmap/ic_ahorro" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -113,7 +113,7 @@
                         android:layout_height="48dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="8dp"
-                        android:src="@mipmap/ic_option_pc" />
+                        android:src="@mipmap/ic_cuota" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -149,7 +149,7 @@
                         android:layout_height="48dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="8dp"
-                        android:src="@mipmap/ic_option_pc" />
+                        android:src="@mipmap/ic_profile" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -182,10 +182,10 @@
 
                     <ImageView
                         android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="8dp"
-                        android:src="@mipmap/ic_btn_cerrar" />
+                        android:src="@mipmap/ic_logout" />
 
                     <TextView
                         android:layout_width="0dp"

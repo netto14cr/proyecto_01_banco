@@ -1,5 +1,6 @@
 package com.example.proyecto_01_prestamos_bancarios
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -125,6 +126,7 @@ class InformacionPersonal : AppCompatActivity() {
         editTexDireccion=findViewById<EditText?>(R.id.editTextTextDereccionInfoP)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     fun modificarDatos(){
         //obtener el usuario logueado
         // Obtener referencia a SharedPreferences

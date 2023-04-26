@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/image_view_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/ic_logo_foreground"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/text_view_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_view_logo"
+        android:text="@string/welcome_message"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edit_text_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_welcome"
         android:layout_marginTop="32dp"
+        android:background="#E8E8E8"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:autofillHints="" />
+        android:autofillHints=""
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:padding="16dp"/>
 
     <EditText
         android:id="@+id/edit_text_password"
@@ -19,9 +45,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_text_email"
         android:layout_marginTop="16dp"
+        android:background="#E8E8E8"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:autofillHints="" />
+        android:autofillHints=""
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:padding="16dp"/>
 
     <Button
         android:id="@+id/button_login"
@@ -29,7 +59,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_text_password"
         android:layout_marginTop="32dp"
-        android:text="@string/log_in" />
+        android:background="#1C8ADB"
+        android:text="@string/log_in"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_back"
@@ -37,6 +71,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button_login"
         android:layout_marginTop="16dp"
-        android:text="@string/go_back" />
+        android:background="#1C8ADB"
+        android:text="@string/go_back"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
