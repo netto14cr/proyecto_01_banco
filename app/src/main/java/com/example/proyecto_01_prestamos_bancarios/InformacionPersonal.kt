@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DataSnapshot
@@ -22,10 +23,10 @@ class InformacionPersonal : AppCompatActivity() {
 
 
     private lateinit var btnModificar: Button
-    private lateinit var editTextNombre:EditText
-    private lateinit var editTextSalario:EditText
+    private lateinit var editTextNombre:TextView
+    private lateinit var editTextSalario:TextView
     private lateinit var editTextTelefono:EditText
-    private lateinit var editTextFechaNacimiento:EditText
+    private lateinit var editTextFechaNacimiento:TextView
 
     private lateinit var radioButtonSoltero:RadioButton
     private lateinit var radioButtonCasado:RadioButton
@@ -114,10 +115,11 @@ class InformacionPersonal : AppCompatActivity() {
     }
     fun asignandoVariablesVista(){
         btnModificar=findViewById<Button?>(R.id.btnModificarInfoP)
-        editTextNombre=findViewById<EditText?>(R.id.editTextNombreInfoP)
-        editTextSalario=findViewById<EditText?>(R.id.editTextSalarioInfoP)
+        editTextNombre=findViewById<EditText?>(R.id.textViewNombreContent)
+        editTextSalario=findViewById<EditText?>(R.id.textViewSalarioContent)
+
         editTextTelefono=findViewById<EditText?>(R.id.editTextTelefonoInfoP)
-        editTextFechaNacimiento=findViewById<EditText?>(R.id.editTextFechNacInfP)
+        editTextFechaNacimiento=findViewById<EditText?>(R.id.textViewFNContent)
         radioButtonSoltero=findViewById(R.id.radioButtonSoltInfoP)
         radioButtonCasado=findViewById(R.id.radioButtonCasadoInfoP)
         radioButtonDivorciado=findViewById(R.id.radioButtonDivorciInfoP)
@@ -147,9 +149,7 @@ class InformacionPersonal : AppCompatActivity() {
         }
 
         val nuevosValores = mapOf<String, Any>(
-                "nombre" to editTextNombre.text.toString(),
-                "salario" to editTextSalario.text.toString(),
-                "fecha_nacimiento" to editTextFechaNacimiento.text.toString(),
+                "telefono" to editTextTelefono.text.toString(),
                 "estado_civil" to esta_strin,
                 "direccion" to editTexDireccion.text.toString()
             )
