@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Proyecto Prestamos Bancarios</string>
+    <string name="app_name">Banco AsoDesUnidos</string>
     <string name="welcome_message" />
     <string name="login_button_text">Iniciar sesion</string>
     <string name="register_button_text">Registrarse</string>
