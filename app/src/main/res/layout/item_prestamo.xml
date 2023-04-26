@@ -42,6 +42,14 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tvCuotasRestantes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cuotas_restantes"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <TextView
                 android:id="@+id/tvMontoCuota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -85,6 +85,7 @@
     <string name="tipo_de_usuaruario">Tipo de usuario</string>
     <string name="registrar_usuario">Registrar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="cuotas_restantes">Cuotas restantes</string>
     <string-array name="tipo_usuario_opciones">
         <item>Developer</item>
         <item>Admin</item>

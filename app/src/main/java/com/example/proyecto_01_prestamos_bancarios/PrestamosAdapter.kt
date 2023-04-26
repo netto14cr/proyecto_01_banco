@@ -42,7 +42,8 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
         @SuppressLint("SetTextI18n")
         fun bind(prestamo: Prestamo2) {
             itemView.findViewById<TextView>(R.id.tvMontoSolicitado).text = "Monto solicitado: " + prestamo.montoSolicitado.toString()
-            itemView.findViewById<TextView>(R.id.tvPlazo).text = "Plazo: " + prestamo.plazoTexto.toString()
+            itemView.findViewById<TextView>(R.id.tvPlazo).text = "Plazo: " + prestamo.plazoTexto
+            itemView.findViewById<TextView>(R.id.tvCuotasRestantes).text = "Cuotas restantes: " + (prestamo.cuotasTotales - prestamo.cuotasCanceladas).toString()
             itemView.findViewById<TextView>(R.id.tvTasa).text = "Tasa de interés: " + prestamo.tasaInteres.toString()
             itemView.findViewById<TextView>(R.id.tvMontoCuota).text = "Cuota: " + prestamo.montoCuota.toString()
             itemView.findViewById<TextView>(R.id.tvMontoPrestamo).text = "Monto real: " + prestamo.montoPrestamo.toString()
@@ -197,7 +198,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
 
                                     val builder2 = AlertDialog.Builder(itemView.context)
                                     builder2.setTitle("Pago realizado")
-                                    builder2.setMessage("Se ha realizado el pago de $${montoTotalPagado} correspondiente a $cuotasPagadas cuotas.")
+                                    builder2.setMessage("Se ha realizado el pago de ${montoTotalPagado} correspondiente a $cuotasPagadas cuotas.")
                                     builder2.setPositiveButton("OK") { _, _ -> }
                                     val dialog2 = builder2.create()
                                     dialog2.show()
