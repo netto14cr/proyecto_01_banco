@@ -47,6 +47,8 @@
     <string name="c_dula">Cedula</string>
     <string name="vista_cliente">Vista cliente</string>
     <string name="registro_de_usuarios">Registro de usuarios</string>
+    <string name="ver_info_personal"> Información personal  </string>
+    <string name="btnModificarInfoP">Modificar</string>
     <string name="selecciona_un_tipo_de_prestamo">Selecciona el tipo de prestamo</string>
     <string name="selecciona_un_cliente">Selecciona un cliente</string>
     <string name="selecciona_el_plazo_del_prestamo">Selecciona el plazo del prestamo</string>
@@ -87,4 +89,18 @@
         <item>Developer</item>
         <item>Admin</item>
     </string-array>
+    <string-array name="tipoCreditoOptions">
+        <item>Hipotecario</item>
+        <item>Educación</item>
+        <item>Personal</item>
+        <item>Viajes</item>
+    </string-array>
+
+    <string-array name="plazoOptions">
+        <item>12 meses</item>
+        <item>24 meses</item>
+        <item>36 meses</item>
+        <item>48 meses</item>
+    </string-array>
+
 </resources>
