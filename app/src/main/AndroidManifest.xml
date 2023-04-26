@@ -13,10 +13,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_01_prestamos_bancarios"
+        android:screenOrientation="portrait"
         tools:targetApi="31">
         <activity
             android:name=".PrestamosActivity"
-            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".DevActivity"

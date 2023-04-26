@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -38,12 +39,30 @@ class LoginActivity : AppCompatActivity() {
         // Asignar un listener al botón "Ingresar"
         btnLogin.setOnClickListener {
             // Obtener los valores de usuario y contraseña ingresados
+            val emailPattern = Patterns.EMAIL_ADDRESS
             val username = etUsername.text.toString()
             val password = etPassword.text.toString()
 
-            // Validar que los campos de usuario y contraseña no estén vacíos
-            if (username.isEmpty() || password.isEmpty()) {
-                showMessageDialog("Error", "Por favor ingrese su correo electrónico y contraseña.")
+            if (username.length > 50 || password.length > 50) {
+                showMessageDialog("Error", "La longitud máxima para el usuario y la contraseña es de 50 caracteres.")
+                return@setOnClickListener
+            }
+
+            // Validar que el campo de usuario no esté vacío
+            if (username.isEmpty()) {
+                showMessageDialog("Error", "Por favor ingrese su correo electrónico.")
+                return@setOnClickListener
+            }
+
+            // Validar que el campo de contraseña no esté vacío
+            if (password.isEmpty()) {
+                showMessageDialog("Error", "Por favor ingrese su contraseña.")
+                return@setOnClickListener
+            }
+
+            // Validar que el correo electrónico tenga un formato válido
+            if (!emailPattern.matcher(username).matches()) {
+                showMessageDialog("Error", "Por favor ingrese una dirección de correo electrónico válida.")
                 return@setOnClickListener
             }
 
@@ -101,7 +120,6 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
         }
-
         // Asignar un listener al botón "Cancelar"
         btnCancel.setOnClickListener {
             // Ir a la actividad anterior (en este caso, la actividad Main)

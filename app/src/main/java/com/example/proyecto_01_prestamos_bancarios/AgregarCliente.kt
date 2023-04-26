@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
@@ -15,6 +16,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import enviarCorreo
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AgregarClienteActivity : AppCompatActivity() {
 
@@ -66,14 +70,104 @@ class AgregarClienteActivity : AppCompatActivity() {
                 else -> "Soltero" // Por defecto se considera soltero si no se ha seleccionado nada
             }
 
+            // Validar cédula
+            if (cedula.isEmpty()) {
+                cedulaEditText.error = "La cédula es requerida"
+                return@setOnClickListener
+            }
+            if (!cedula.matches("[0-9]+".toRegex())) {
+                cedulaEditText.error = "La cédula debe ser numérica"
+                return@setOnClickListener
+            }
+            if (cedula.length < 9 || cedula.length > 12) {
+                cedulaEditText.error = "La cédula debe tener entre 9 y 12 dígitos"
+                return@setOnClickListener
+            }
+
+            // Validar nombre
+            if (nombre.isEmpty()) {
+                nombreEditText.error = "El nombre es requerido"
+                return@setOnClickListener
+            }
+            if (!nombre.matches("[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+".toRegex())) {
+                nombreEditText.error = "El nombre debe ser un valor de texto"
+                return@setOnClickListener
+            }
+
+            // Validar salario
+            if (salario.isEmpty()) {
+                salarioEditText.error = "El salario es requerido"
+                return@setOnClickListener
+            }
+            if (!salario.matches("[0-9]+".toRegex())) {
+                salarioEditText.error = "El salario debe ser un valor numérico"
+                return@setOnClickListener
+            }
+
+            // Validar teléfono
+            if (telefono.isEmpty()) {
+                telefonoEditText.error = "El teléfono es requerido"
+                return@setOnClickListener
+            }
+
+            if (!telefono.matches("[0-9]+".toRegex())) {
+                telefonoEditText.error = "El teléfono debe ser numérico"
+                return@setOnClickListener
+            }
+
+            if (telefono.length < 8 ) {
+                telefonoEditText.error = "El teléfono debe tener entre 8 dígitos"
+                return@setOnClickListener
+            }
+
+            // Validar fecha
+            if (fecha.isEmpty()) {
+                fechaEditText.error = "La fecha es requerida"
+                return@setOnClickListener
+            } else {
+                try {
+                    val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+                    dateFormat.isLenient = false
+                    val date = dateFormat.parse(fecha)
+
+                    // Validar que la fecha no sea menor a 18 años
+                    val calendar = Calendar.getInstance()
+                    calendar.add(Calendar.YEAR, -18)
+                    if (date.after(calendar.time)) {
+                        fechaEditText.error = "Debes ser mayor de 18 años para registrarte"
+                        return@setOnClickListener
+                    }
+
+                } catch (e: ParseException) {
+                    fechaEditText.error = "El formato de fecha debe ser dd/mm/yyyy"
+                    return@setOnClickListener
+                }
+            }
+
+            // Crear el usuario en Firebase Authentication
+            val email = emailEditText.text.toString()
+
+            // Validar correo electrónico
+            if (email.isEmpty()) {
+                emailEditText.error = "El correo electrónico es requerido"
+                return@setOnClickListener
+            }
+            if (!isValidEmail(email)) {
+                emailEditText.error = "El correo electrónico no es válido"
+                return@setOnClickListener
+            }
+
+            if (direccion.isEmpty()) {
+                direccionEditText.error = "La dirección no puede estar vacía"
+                return@setOnClickListener
+            }
+
             // Validar que los campos no estén vacíos
             if (cedula.isBlank() || nombre.isBlank() || salario.isBlank() || telefono.isBlank() || fecha.isBlank() || direccion.isBlank()) {
                 Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Crear el usuario en Firebase Authentication
-            val email = emailEditText.text.toString()
             val password = "20232024" // La contraseña del cliente se asigna por defecto
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
@@ -153,15 +247,16 @@ class AgregarClienteActivity : AppCompatActivity() {
                         Log.e(TAG, "Error al crear el nuevo usuario", task.exception)
                     }
                 }
-
-
         }
 
         findViewById<Button>(R.id.boton_cancelar).setOnClickListener {
             finish()
         }
 
+    }
 
+    private fun isValidEmail(email: String): Boolean {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
     companion object {
