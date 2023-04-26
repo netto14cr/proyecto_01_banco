@@ -183,6 +183,7 @@ class AgregarClienteActivity : AppCompatActivity() {
                             "salario" to salario,
                             "fecha_nacimiento" to fecha,
                             "direccion" to direccion,
+                            "telefono" to telefono,
                             "estado_civil" to estadoCivil,
                             "ahorros" to hashMapOf(
                                 "Navidad" to "0",
