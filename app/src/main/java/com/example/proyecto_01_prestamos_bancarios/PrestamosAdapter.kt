@@ -42,7 +42,8 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
         @SuppressLint("SetTextI18n")
         fun bind(prestamo: Prestamo2) {
             itemView.findViewById<TextView>(R.id.tvMontoSolicitado).text = "Monto solicitado: " + prestamo.montoSolicitado.toString()
-            itemView.findViewById<TextView>(R.id.tvPlazo).text = "Plazo: " + prestamo.plazoTexto.toString()
+            itemView.findViewById<TextView>(R.id.tvPlazo).text = "Plazo: " + prestamo.plazoTexto
+            itemView.findViewById<TextView>(R.id.tvCuotasRestantes).text = "Cuotas restantes: " + (prestamo.cuotasTotales - prestamo.cuotasCanceladas).toString()
             itemView.findViewById<TextView>(R.id.tvTasa).text = "Tasa de interés: " + prestamo.tasaInteres.toString()
             itemView.findViewById<TextView>(R.id.tvMontoCuota).text = "Cuota: " + prestamo.montoCuota.toString()
             itemView.findViewById<TextView>(R.id.tvMontoPrestamo).text = "Monto real: " + prestamo.montoPrestamo.toString()
@@ -66,7 +67,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
             } else {
                 ivEstadoPrestamo.setImageResource(R.mipmap.check_rojo)
                 ivEstadoPrestamo.visibility = View.VISIBLE
-                itemView.findViewById<TextView>(R.id.tvEstadoPrestamo).text = "Estado: Pago Completo"
+                itemView.findViewById<TextView>(R.id.tvEstadoPrestamo).text = "Estado: Completo"
                 btnPagarCuota.isEnabled = false
             }
 
@@ -105,7 +106,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
                             cuotasSpinner.adapter = cuotasAdapter
 
                             val montoCuotaTextView = dialogView.findViewById<TextView>(R.id.tvMontoCuota)
-                            montoCuotaTextView.text = "Valor de cuota: $${String.format("%.2f", prestamo.montoCuota)}"
+                            montoCuotaTextView.text = "Valor de cuota: ${String.format("%.2f", prestamo.montoCuota)}"
                             val montoTotalTextView = dialogView.findViewById<TextView>(R.id.tvMontoTotal)
                             cuotasSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                                 override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
@@ -145,9 +146,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
 
                                     // Actualizar el saldo del préstamo
                                     val saldoAnterior = prestamo.saldo
-                                    prestamo.saldo =
-                                        String.format("%.2f", prestamo.saldo - montoTotalPagado)
-                                            .toDouble()
+                                    prestamo.saldo = String.format("%.2f", prestamo.saldo - montoTotalPagado).toDouble()
                                     prestamo.cuotasCanceladas += cuotasPagadas
 
                                     if (prestamo.saldo <= 0) {
@@ -156,6 +155,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
 
                                     if (prestamo.cuotasCanceladas == prestamo.cuotasTotales) {
                                         prestamo.saldo = 0.0
+                                        prestamo.prestamoActivo = false
                                     }
 
                                     // Actualizar el saldo del cliente
@@ -198,7 +198,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
 
                                     val builder2 = AlertDialog.Builder(itemView.context)
                                     builder2.setTitle("Pago realizado")
-                                    builder2.setMessage("Se ha realizado el pago de $${montoTotalPagado} correspondiente a $cuotasPagadas cuotas.")
+                                    builder2.setMessage("Se ha realizado el pago de ${montoTotalPagado} correspondiente a $cuotasPagadas cuotas.")
                                     builder2.setPositiveButton("OK") { _, _ -> }
                                     val dialog2 = builder2.create()
                                     dialog2.show()
