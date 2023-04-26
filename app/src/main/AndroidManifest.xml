@@ -25,9 +25,7 @@
         <activity
             android:name=".CalcularCuota"
             android:exported="false" />
-        <activity
-            android:name=".ActivarAhorro"
-            android:exported="false" />
+
         <activity
             android:name=".GestionMisAhorros"
             android:exported="false" />
