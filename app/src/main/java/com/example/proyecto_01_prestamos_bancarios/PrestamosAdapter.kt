@@ -66,7 +66,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
             } else {
                 ivEstadoPrestamo.setImageResource(R.mipmap.check_rojo)
                 ivEstadoPrestamo.visibility = View.VISIBLE
-                itemView.findViewById<TextView>(R.id.tvEstadoPrestamo).text = "Estado: Pago Completo"
+                itemView.findViewById<TextView>(R.id.tvEstadoPrestamo).text = "Estado: Completo"
                 btnPagarCuota.isEnabled = false
             }
 
@@ -105,7 +105,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
                             cuotasSpinner.adapter = cuotasAdapter
 
                             val montoCuotaTextView = dialogView.findViewById<TextView>(R.id.tvMontoCuota)
-                            montoCuotaTextView.text = "Valor de cuota: $${String.format("%.2f", prestamo.montoCuota)}"
+                            montoCuotaTextView.text = "Valor de cuota: ${String.format("%.2f", prestamo.montoCuota)}"
                             val montoTotalTextView = dialogView.findViewById<TextView>(R.id.tvMontoTotal)
                             cuotasSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                                 override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
@@ -145,9 +145,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
 
                                     // Actualizar el saldo del préstamo
                                     val saldoAnterior = prestamo.saldo
-                                    prestamo.saldo =
-                                        String.format("%.2f", prestamo.saldo - montoTotalPagado)
-                                            .toDouble()
+                                    prestamo.saldo = String.format("%.2f", prestamo.saldo - montoTotalPagado).toDouble()
                                     prestamo.cuotasCanceladas += cuotasPagadas
 
                                     if (prestamo.saldo <= 0) {
@@ -156,6 +154,7 @@ class PrestamosAdapter(private val prestamosList: List<Prestamo2>, private val c
 
                                     if (prestamo.cuotasCanceladas == prestamo.cuotasTotales) {
                                         prestamo.saldo = 0.0
+                                        prestamo.prestamoActivo = false
                                     }
 
                                     // Actualizar el saldo del cliente
