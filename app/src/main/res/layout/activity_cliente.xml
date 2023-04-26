@@ -44,7 +44,7 @@
                         android:layout_height="48dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="8dp"
-                        android:src="@mipmap/ic_option_pc" />
+                        android:src="@mipmap/ic_prestamos" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -79,7 +79,7 @@
                     android:layout_height="48dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="8dp"
-                    android:src="@mipmap/ic_option_pc" />
+                    android:src="@mipmap/ic_ahorro" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -113,7 +113,7 @@
                         android:layout_height="48dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="8dp"
-                        android:src="@mipmap/ic_option_pc" />
+                        android:src="@mipmap/ic_cuota" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -128,6 +128,43 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+
+            <!-- Ver información personal -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_info_personal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="8dp"
+                        android:src="@mipmap/ic_profile" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:padding="16dp"
+                        android:text="@string/ver_info_personal"
+                        android:textColor="@color/dark_green"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
             <!-- Boton de cerrar sesion -->
             <androidx.cardview.widget.CardView
@@ -145,10 +182,10 @@
 
                     <ImageView
                         android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="8dp"
-                        android:src="@mipmap/ic_btn_cerrar" />
+                        android:src="@mipmap/ic_logout" />
 
                     <TextView
                         android:layout_width="0dp"

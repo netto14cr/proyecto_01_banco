@@ -23,6 +23,17 @@
             android:exported="false" />
 
         <activity
+            android:name=".CalcularCuota"
+            android:exported="false" />
+
+        <activity
+            android:name=".GestionMisAhorros"
+            android:exported="false" />
+        <activity
+            android:name=".InformacionPersonal"
+            android:exported="false"
+            android:parentActivityName=".ClienteActivity" />
+        <activity
             android:name=".AsignarPrestamoActivity"
             android:exported="false" />
         <activity
