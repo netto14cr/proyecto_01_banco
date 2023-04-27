@@ -31,7 +31,8 @@
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
+        app:layout_constraintVertical_bias="0.505"
+        android:textColor="@color/dark_green" />
 
     <Button
         android:id="@+id/btnModificarInfoP"
@@ -55,7 +56,8 @@
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.056"
+        android:textColor="@color/dark_green" />
 
     <TextView
         android:id="@+id/textViewFN"
@@ -68,7 +70,8 @@
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintVertical_bias="0.398"
+        android:textColor="@color/dark_green" />
 
     <EditText
         android:id="@+id/editTextTelefonoInfoP"
@@ -83,7 +86,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewTelefono"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintVertical_bias="0.158"
+        android:textColor="@color/dark_green" />
 
     <TextView
         android:id="@+id/textViewSalario"
@@ -96,7 +100,8 @@
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintVertical_bias="0.274"
+        android:textColor="@color/dark_green" />
 
     <TextView
         android:id="@+id/textViewTelefono"
@@ -109,7 +114,8 @@
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.154" />
+        app:layout_constraintVertical_bias="0.154"
+        android:textColor="@color/dark_green" />
 
 
     <TextView
@@ -123,7 +129,8 @@
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667" />
+        app:layout_constraintVertical_bias="0.667"
+        android:textColor="@color/dark_green" />
 
     <RadioGroup
         android:id="@+id/radioGroupEstadoCivilInfoP"
@@ -172,7 +179,8 @@
         app:layout_constraintHorizontal_bias="0.771"
         app:layout_constraintStart_toEndOf="@+id/textViewNombre"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.057"
+        android:textColor="@color/dark_green" />
 
     <TextView
         android:id="@+id/textViewSalarioContent"
@@ -185,7 +193,8 @@
         app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toEndOf="@+id/textViewSalario"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263" />
+        app:layout_constraintVertical_bias="0.263"
+        android:textColor="@color/dark_green" />
 
     <TextView
         android:id="@+id/textViewFNContent"
@@ -198,6 +207,7 @@
         app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintStart_toEndOf="@+id/textViewFN"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378" />
+        app:layout_constraintVertical_bias="0.378"
+        android:textColor="@color/dark_green" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
