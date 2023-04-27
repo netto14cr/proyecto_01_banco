@@ -100,7 +100,7 @@
     <string-array name="plazoOptions">
         <item>36 meses</item>
         <item>60 meses</item>
-        <item>60 meses</item>
+        <item>120 meses</item>
     </string-array>
 
 </resources>

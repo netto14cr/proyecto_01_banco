@@ -277,7 +277,7 @@ class GestionMisAhorros : AppCompatActivity() {
 
     private fun modificarAhorros(valor:String) {
 
-        if(valor.toString().toInt()>5000) {
+        if(valor.toString().toInt()>=5000) {
 
             //obtener el usuario logueado
             // Obtener referencia a SharedPreferences
